@@ -1,0 +1,272 @@
+:root {
+    --paper: #f7f6f0;
+    --surface: #fffefa;
+    --ink: #20382f;
+    --muted: #66766d;
+    --green: #496b59;
+    --green-light: #e8eee7;
+    --rust: #a45f45;
+    --line: #dce2d9;
+    --max: 1080px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: var(--green);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: var(--rust);
+}
+
+/* Header and navigation */
+
+.site-header {
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+}
+
+.header-inner {
+    max-width: var(--max);
+    margin: auto;
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brand {
+    text-decoration: none;
+    color: var(--ink);
+}
+
+.brand-name {
+    display: block;
+    font: 27px Georgia, serif;
+}
+
+.brand-subtitle {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 19px;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--ink);
+    border-color: var(--rust);
+}
+
+/* Main content */
+
+main {
+    max-width: var(--max);
+    margin: auto;
+    padding: 56px 28px 80px;
+    min-height: 70vh;
+}
+
+.eyebrow {
+    color: var(--rust);
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: clamp(38px, 5vw, 54px);
+    margin: 10px 0 16px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 17px;
+}
+
+h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.page-intro {
+    max-width: 760px;
+    margin-bottom: 42px;
+}
+
+.lead {
+    color: #465b50;
+    font: 20px/1.55 Georgia, serif;
+}
+
+.section {
+    margin-top: 42px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+}
+
+.item {
+    padding-bottom: 22px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.meta {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.tag {
+    display: inline-block;
+    background: var(--green-light);
+    color: var(--green);
+    padding: 3px 9px;
+    font-size: 11px;
+    margin: 3px 5px 3px 0;
+}
+
+/* Homepage */
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.5fr .8fr;
+    gap: 56px;
+    align-items: start;
+}
+
+.portrait {
+    background: var(--green-light);
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    max-width: 330px;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 16px;
+    border: 1px solid var(--green);
+    color: var(--green);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.button.primary {
+    background: var(--green);
+    color: white;
+}
+
+/* Cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 22px;
+}
+
+/* Contact */
+
+.contact-box {
+    background: var(--green-light);
+    padding: 24px;
+    max-width: 650px;
+}
+
+/* Footer */
+
+.site-footer {
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.footer-inner {
+    max-width: var(--max);
+    margin: auto;
+    padding: 22px 28px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Mobile */
+
+@media (max-width: 760px) {
+    .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hero-grid,
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 38px 20px 60px;
+    }
+
+    .portrait {
+        max-width: 260px;
+    }
+}
