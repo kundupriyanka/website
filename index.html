@@ -1,8 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Priyanka Kundu — Communication Scholar</title>
@@ -52,28 +52,14 @@
             padding: 0 6%;
         }
 
+        /* Navigation */
+
         header {
             border-bottom: 1px solid var(--line);
             background: var(--paper);
             position: sticky;
             top: 0;
             z-index: 10;
-        }
-
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            inset: 0;
-        }
-
-        .portrait .caption {
-            position: relative;
-            margin-top: auto;
-            color: white;
-            border-top: 1px solid rgba(255, 255, 255, 0.6);
-            z-index: 2;
         }
 
         .nav {
@@ -99,6 +85,8 @@
         nav a {
             text-decoration: none;
         }
+
+        /* Hero section */
 
         .hero {
             padding: 94px 0 82px;
@@ -151,6 +139,13 @@
             color: var(--muted);
         }
 
+        .body-copy {
+            max-width: 720px;
+            color: var(--muted);
+        }
+
+        /* Buttons */
+
         .links {
             display: flex;
             flex-wrap: wrap;
@@ -159,16 +154,33 @@
         }
 
         .button {
+            display: inline-block;
             border: 1px solid var(--ink);
             padding: 11px 19px;
             text-decoration: none;
             font-size: 14px;
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
         }
 
         .button.primary {
             background: var(--ink);
             color: white;
         }
+
+        .button.primary:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        .button:not(.primary):hover {
+            background: var(--ink);
+            color: white;
+        }
+
+        /* Profile photograph */
 
         .portrait {
             background: #e6ebe0;
@@ -181,13 +193,14 @@
             overflow: hidden;
         }
 
-        .monogram {
-            font-family: Georgia, serif;
-            font-size: 140px;
-            letter-spacing: -14px;
-            line-height: 1;
-            color: #355b4f;
-            margin: auto;
+        .profile-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 0;
         }
 
         .portrait::before,
@@ -196,10 +209,12 @@
             position: absolute;
             width: 300px;
             height: 300px;
-            border: 1px solid #a4b6a6;
+            border: 1px solid rgba(255, 255, 255, 0.45);
             border-radius: 50%;
             right: -155px;
             top: 0;
+            z-index: 1;
+            pointer-events: none;
         }
 
         .portrait::after {
@@ -208,17 +223,27 @@
         }
 
         .portrait small {
+            position: relative;
+            z-index: 2;
             font-size: 11px;
             letter-spacing: 2px;
             text-transform: uppercase;
+            color: white;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
         }
 
         .portrait .caption {
-            font-size: 14px;
-            border-top: 1px solid #b6c5b6;
+            position: relative;
+            z-index: 2;
+            margin-top: auto;
             padding-top: 16px;
-            z-index: 1;
+            border-top: 1px solid rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            color: white;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
         }
+
+        /* General sections */
 
         section {
             padding: 68px 0;
@@ -231,10 +256,7 @@
             gap: 60px;
         }
 
-        .body-copy {
-            max-width: 720px;
-            color: var(--muted);
-        }
+        /* Research interests */
 
         .research {
             display: grid;
@@ -259,6 +281,8 @@
             color: var(--muted);
         }
 
+        /* Featured projects */
+
         .project {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -271,6 +295,13 @@
         .project p {
             color: var(--muted);
         }
+
+        .project .project-methods {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Publications */
 
         .pub {
             display: grid;
@@ -299,6 +330,8 @@
             color: var(--accent);
         }
 
+        /* Teaching */
+
         .teaching-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -315,6 +348,8 @@
             padding: 4px 0;
         }
 
+        /* CV and background */
+
         .cv-details {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -330,6 +365,27 @@
             color: var(--muted);
         }
 
+        .cv-download {
+            margin: 30px 0;
+            padding: 26px;
+            background: #e9ede4;
+        }
+
+        .cv-download h3 {
+            margin-top: 0;
+        }
+
+        .cv-download p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .cv-download .links {
+            margin-top: 18px;
+        }
+
+        /* Footer */
+
         footer {
             background: var(--ink);
             color: var(--paper);
@@ -344,12 +400,18 @@
             margin: 0;
         }
 
+        footer .links a:hover {
+            color: #d7b8a6;
+        }
+
         footer small {
             display: block;
             margin-top: 38px;
             opacity: 0.65;
             font-size: 12px;
         }
+
+        /* Mobile responsiveness */
 
         @media (max-width: 760px) {
             .nav {
@@ -370,20 +432,7 @@
             }
 
             .portrait {
-                aspect-ratio: 2 / 1;
-            }
-
-            .monogram {
-                font-size: 95px;
-            }
-
-            .portrait small {
-                display: none;
-            }
-
-            .portrait .caption {
-                border: 0;
-                padding: 0;
+                aspect-ratio: 4 / 3;
             }
 
             .section-head,
@@ -411,11 +460,19 @@
                 grid-template-columns: 48px 1fr;
                 gap: 12px;
             }
+
+            .cv-download {
+                padding: 20px;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
             html {
                 scroll-behavior: auto;
+            }
+
+            .button {
+                transition: none;
             }
         }
     </style>
@@ -427,6 +484,7 @@
     <header>
         <div class="wrap">
             <div class="nav">
+
                 <a class="brand" href="#">Priyanka Kundu</a>
 
                 <nav aria-label="Main navigation">
@@ -435,14 +493,16 @@
                     <a href="#teaching">Teaching</a>
                     <a href="#cv">CV & background</a>
                 </nav>
+
             </div>
         </div>
     </header>
 
     <main class="wrap">
 
-        <!-- Hero -->
+        <!-- Hero section -->
         <div class="hero">
+
             <div>
                 <div class="eyebrow">
                     Communication · Media · Technology
@@ -454,15 +514,15 @@
                 </h1>
 
                 <p class="intro">
-                    I’m Priyanka Kundu, a doctoral candidate in Communication
-                    at the University of Illinois Chicago.
+                    I’m Priyanka Kundu, a doctoral candidate in
+                    Communication at the University of Illinois Chicago.
                 </p>
 
                 <p class="body-copy">
-                    I study how media and emerging technologies redistribute
-                    communicative power—among political elites, media
-                    institutions, and ordinary users—across Global South and
-                    transnational contexts.
+                    I study how media and emerging technologies
+                    redistribute communicative power—among political
+                    elites, media institutions, and ordinary users—across
+                    Global South and transnational contexts.
                 </p>
 
                 <div class="links">
@@ -473,35 +533,42 @@
                     <a
                         class="button"
                         href="https://scholar.google.com/citations?user=sZ0dZLEAAAAJ"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         Google Scholar ↗
                     </a>
                 </div>
             </div>
 
+            <!-- Profile photograph -->
             <aside
                 class="portrait"
-                aria-label="Priyanka Kundu's profile"
-                    <img
-
-                        src="images/profile.jpg"
-
-                        alt="Priyanka Kundu"
-
-                        class="profile-image"
-                    >       
+                aria-label="Priyanka Kundu's profile photograph"
             >
+
+                <img
+                    class="profile-image"
+                    src="images/profile.jpg"
+                    alt="Priyanka Kundu"
+                >
+
+                <small>Scholar & educator</small>
 
                 <div class="caption">
                     Media, technology,<br>
                     and communicative power.
                 </div>
+
             </aside>
+
         </div>
 
         <!-- Research -->
         <section id="research">
+
             <div class="section-head">
+
                 <div>
                     <div class="eyebrow">01 / Research</div>
 
@@ -511,6 +578,7 @@
                 </div>
 
                 <div class="body-copy">
+
                     <p>
                         My research connects digital political communication,
                         journalism, platform affordances, and generative AI.
@@ -524,6 +592,7 @@
                         discourse analysis, interviews, and the study of
                         platforms.
                     </p>
+
                 </div>
             </div>
 
@@ -567,6 +636,7 @@
 
             <!-- Dissertation project -->
             <div class="project">
+
                 <div>
                     <div class="eyebrow">Dissertation</div>
 
@@ -582,15 +652,17 @@
                         campaign storytelling.
                     </p>
 
-                    <p style="margin: 0; font-size: 14px">
+                    <p class="project-methods">
                         Walkthrough method · Post coding ·
                         Critical discourse analysis
                     </p>
                 </div>
+
             </div>
 
             <!-- AI research project -->
             <div class="project">
+
                 <div>
                     <div class="eyebrow">AI research</div>
 
@@ -606,21 +678,25 @@
                         English.
                     </p>
 
-                    <p style="margin: 0; font-size: 14px">
+                    <p class="project-methods">
                         Generative AI · Framing ·
                         Language & transnational comparison
                     </p>
                 </div>
+
             </div>
+
         </section>
 
         <!-- Publications -->
         <section id="publications">
+
             <div class="eyebrow">02 / Selected publications</div>
 
             <h2>Journalism, AI & public life.</h2>
 
             <div class="pub">
+
                 <span class="year">2026</span>
 
                 <div>
@@ -632,9 +708,11 @@
                         Iowa Communication Journal · Co-authored article
                     </p>
                 </div>
+
             </div>
 
             <div class="pub">
+
                 <span class="year">2024</span>
 
                 <div>
@@ -647,23 +725,29 @@
                         Pacific Journalism Review · Co-authored article
                     </p>
                 </div>
+
             </div>
 
             <div class="pub">
+
                 <span class="year">2024</span>
 
                 <div>
                     <h3>
-                        Persuasive strategies in top TikTok breast cancer videos
+                        Persuasive strategies in top TikTok breast
+                        cancer videos
                     </h3>
 
                     <p>
-                        Discover Social Science and Health · Co-authored article
+                        Discover Social Science and Health ·
+                        Co-authored article
                     </p>
                 </div>
+
             </div>
 
             <div class="pub">
+
                 <span class="year">2020</span>
 
                 <div>
@@ -675,20 +759,28 @@
                         Handbook chapter · First author
                     </p>
                 </div>
+
             </div>
 
             <div class="links">
+
                 <a
                     href="https://scholar.google.com/citations?user=sZ0dZLEAAAAJ"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     View publication details on Google Scholar ↗
                 </a>
+
             </div>
+
         </section>
 
         <!-- Teaching -->
         <section id="teaching">
+
             <div class="section-head">
+
                 <div>
                     <div class="eyebrow">03 / Teaching</div>
 
@@ -705,6 +797,7 @@
                     small-group activities, and varied opportunities
                     to participate.
                 </p>
+
             </div>
 
             <div class="teaching-grid">
@@ -741,10 +834,12 @@
                 </div>
 
             </div>
+
         </section>
 
-        <!-- CV and Background -->
+        <!-- CV and academic background -->
         <section id="cv">
+
             <div class="eyebrow">04 / CV & background</div>
 
             <h2>A transnational perspective.</h2>
@@ -791,10 +886,48 @@
 
             </div>
 
+            <!-- CV download section -->
+            <div class="cv-download">
+
+                <h3>Curriculum Vitae</h3>
+
+                <p>
+                    View my academic CV for details about my education,
+                    research, publications, teaching experience, and
+                    professional activities.
+                </p>
+
+                <div class="links">
+
+                    <a
+                        class="button primary"
+                        href="files/Priyanka_Kundu_CV.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View CV ↗
+                    </a>
+
+                    <a
+                        class="button"
+                        href="files/Priyanka_Kundu_CV.pdf"
+                        download="Priyanka_Kundu_CV.pdf"
+                    >
+                        Download CV ↓
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Academic profiles -->
             <div class="links">
+
                 <a
                     class="button"
                     href="https://orcid.org/0000-0001-8716-7038"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     ORCID ↗
                 </a>
@@ -802,21 +935,26 @@
                 <a
                     class="button"
                     href="https://scholar.google.com/citations?user=sZ0dZLEAAAAJ"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     Scholar profile ↗
                 </a>
+
             </div>
+
         </section>
 
     </main>
 
     <!-- Footer -->
     <footer>
+
         <div class="wrap">
 
             <div
                 class="eyebrow"
-                style="color: #d7b8a6"
+                style="color: #d7b8a6;"
             >
                 Priyanka Kundu
             </div>
@@ -829,23 +967,31 @@
             </p>
 
             <div class="links">
+
                 <a
                     href="https://scholar.google.com/citations?user=sZ0dZLEAAAAJ"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     Google Scholar ↗
                 </a>
 
                 <a
                     href="https://orcid.org/0000-0001-8716-7038"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     ORCID ↗
                 </a>
+
             </div>
 
             <small>© 2026 Priyanka Kundu</small>
 
         </div>
+
     </footer>
 
 </body>
+
 </html>
