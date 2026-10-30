@@ -60,6 +60,22 @@
             z-index: 10;
         }
 
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            inset: 0;
+        }
+
+        .portrait .caption {
+            position: relative;
+            margin-top: auto;
+            color: white;
+            border-top: 1px solid rgba(255, 255, 255, 0.6);
+            z-index: 2;
+        }
+
         .nav {
             display: flex;
             align-items: center;
@@ -465,11 +481,16 @@
 
             <aside
                 class="portrait"
-                aria-label="Priyanka Kundu monogram"
-            >
-                <small>Scholar & educator</small>
+                aria-label="Priyanka Kundu's profile"
+                    <img
 
-                <div class="monogram">PK</div>
+                        src="images/profile.jpg"
+
+                        alt="Priyanka Kundu"
+
+                        class="profile-image"
+                    >       
+            >
 
                 <div class="caption">
                     Media, technology,<br>
