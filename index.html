@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Priyanka Kundu — Communication Scholar</title>
+    <title>Priyanka Kundu | Communication Scholar</title>
 
-    <meta
-        name="description"
-        content="Priyanka Kundu studies media, technology, and communicative power across Global South and transnational contexts."
-    >
+    <meta name="description" content="Academic website of Priyanka Kundu, doctoral candidate in Communication at the University of Illinois Chicago. Her research examines digital media, political communication, platform affordances, artificial intelligence, and the Global South.">
 
     <style>
         :root {
-            --paper: #f7f5ef;
-            --ink: #17332f;
-            --muted: #52645e;
-            --line: #ccd4c9;
-            --accent: #b8472d;
+            --background: #f7f7f2;
+            --surface: #ffffff;
+            --text: #26372f;
+            --muted: #69766d;
+            --green: #365b49;
+            --green-light: #e8eee7;
+            --accent: #a65d43;
+            --border: #dfe5dc;
+            --max-width: 1120px;
         }
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         html {
@@ -31,404 +33,498 @@
         }
 
         body {
-            margin: 0;
-            background: var(--paper);
-            color: var(--ink);
-            font: 17px/1.65 system-ui, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 16px;
+            line-height: 1.75;
         }
 
         a {
-            color: inherit;
-            text-underline-offset: 5px;
+            color: var(--green);
+            text-decoration: none;
         }
 
         a:hover {
             color: var(--accent);
         }
 
-        .wrap {
-            max-width: 1180px;
-            margin: auto;
-            padding: 0 6%;
-        }
-
         /* Navigation */
 
         header {
-            border-bottom: 1px solid var(--line);
-            background: var(--paper);
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 100;
+            background: rgba(247, 247, 242, 0.96);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
         }
 
-        .nav {
+        .navigation {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 15px 28px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 19px 0;
             gap: 20px;
         }
 
         .brand {
-            font-weight: 700;
-            text-decoration: none;
-            letter-spacing: -0.5px;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--green);
+            white-space: nowrap;
         }
 
         nav {
             display: flex;
-            gap: 24px;
-            font-size: 14px;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: flex-end;
         }
 
         nav a {
-            text-decoration: none;
-        }
-
-        /* Hero section */
-
-        .hero {
-            padding: 94px 0 82px;
-            display: grid;
-            grid-template-columns: 1.6fr 1fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        .eyebrow {
+            color: var(--muted);
+            font-family: Arial, sans-serif;
             font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
             text-transform: uppercase;
+        }
+
+        nav a:hover {
             color: var(--accent);
         }
 
-        h1,
-        h2,
-        h3 {
-            font-family: Georgia, serif;
-            font-weight: 400;
+        /* Main layout */
+
+        main {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 55px 28px 90px;
+        }
+
+        section {
+            margin-top: 75px;
+            scroll-margin-top: 95px;
+        }
+
+        .section-heading {
+            margin-bottom: 28px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-heading h2 {
+            color: var(--green);
+            font-size: 29px;
+            font-weight: normal;
+        }
+
+        .section-heading p {
+            margin-top: 5px;
+            color: var(--muted);
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        /* Hero */
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 270px;
+            gap: 55px;
+            align-items: center;
+            padding: 25px 0 45px;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .hero h1 {
+            color: var(--green);
+            font-size: clamp(38px, 5vw, 56px);
+            font-weight: normal;
             line-height: 1.12;
+            margin-bottom: 13px;
         }
 
-        h1 {
-            font-size: clamp(52px, 7vw, 86px);
-            letter-spacing: -3px;
-            margin: 24px 0;
-        }
-
-        h2 {
-            font-size: clamp(34px, 4vw, 48px);
-            letter-spacing: -1.2px;
-            margin: 12px 0 26px;
-        }
-
-        h3 {
-            font-size: 27px;
-            margin: 16px 0;
-        }
-
-        p {
-            margin: 0 0 20px;
-        }
-
-        .intro {
-            font-size: 21px;
-            max-width: 640px;
+        .hero-title {
             color: var(--muted);
+            font-size: 18px;
+            margin-bottom: 22px;
         }
 
-        .body-copy {
+        .hero-description {
             max-width: 720px;
-            color: var(--muted);
+            font-size: 17px;
+            line-height: 1.85;
         }
 
-        /* Buttons */
-
-        .links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 30px;
+        .hero-description + .hero-description {
+            margin-top: 13px;
         }
 
-        .button {
-            display: inline-block;
-            border: 1px solid var(--ink);
-            padding: 11px 19px;
-            text-decoration: none;
-            font-size: 14px;
-            transition:
-                background 0.2s ease,
-                color 0.2s ease;
-        }
-
-        .button.primary {
-            background: var(--ink);
-            color: white;
-        }
-
-        .button.primary:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: white;
-        }
-
-        .button:not(.primary):hover {
-            background: var(--ink);
-            color: white;
-        }
-
-        /* Profile photograph */
-
-        .portrait {
-            background: #e6ebe0;
+        .profile-image-container {
+            width: 100%;
             aspect-ratio: 4 / 5;
-            position: relative;
             overflow: hidden;
-            padding: 0;
+            background: var(--green-light);
         }
 
         .profile-image {
+            display: block;
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center;
-            display: block;
-}
-
-
-        /* General sections */
-
-        section {
-            padding: 68px 0;
-            border-top: 1px solid var(--line);
         }
 
-        .section-head {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 60px;
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 18px;
+            margin-top: 25px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .contact-links a {
+            border-bottom: 1px solid var(--green);
+        }
+
+        .cv-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 27px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 19px;
+            border: 1px solid var(--green);
+            background: var(--green);
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: 0.2s ease;
+        }
+
+        .button:hover {
+            background: transparent;
+            color: var(--green);
+        }
+
+        .button.secondary {
+            background: transparent;
+            color: var(--green);
+        }
+
+        .button.secondary:hover {
+            background: var(--green);
+            color: white;
         }
 
         /* Research interests */
 
-        .research {
+        .interest-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            margin-top: 40px;
+            gap: 15px;
         }
 
-        .research article {
-            border-top: 2px solid var(--ink);
-            padding-top: 18px;
+        .interest-card {
+            background: var(--green-light);
+            padding: 20px;
+            border-left: 3px solid var(--green);
         }
 
-        .number {
-            font-size: 12px;
-            color: var(--accent);
-            letter-spacing: 2px;
+        .interest-card h3 {
+            color: var(--green);
+            font-size: 17px;
+            font-weight: normal;
+            margin-bottom: 7px;
         }
 
-        .research p {
-            font-size: 15px;
+        .interest-card p {
             color: var(--muted);
-        }
-
-        /* Featured projects */
-
-        .project {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 60px;
-            margin-top: 45px;
-            padding: 32px;
-            background: #e9ede4;
-        }
-
-        .project p {
-            color: var(--muted);
-        }
-
-        .project .project-methods {
-            margin: 0;
             font-size: 14px;
+            line-height: 1.65;
+        }
+
+        /* General content */
+
+        .content-block {
+            margin-bottom: 38px;
+        }
+
+        .content-block h3 {
+            color: var(--green);
+            font-size: 20px;
+            font-weight: normal;
+            margin-bottom: 17px;
+        }
+
+        .entry {
+            display: grid;
+            grid-template-columns: 175px 1fr;
+            gap: 25px;
+            padding: 17px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .entry:last-child {
+            border-bottom: none;
+        }
+
+        .entry-date {
+            color: var(--accent);
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .entry-content h4 {
+            color: var(--green);
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        .entry-content p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .entry-content p + p {
+            margin-top: 5px;
         }
 
         /* Publications */
 
-        .pub {
-            display: grid;
-            grid-template-columns: 80px 1fr;
-            gap: 20px;
-            padding: 23px 0;
-            border-bottom: 1px solid var(--line);
+        .publication-list {
+            list-style: none;
+            counter-reset: publication;
         }
 
-        .pub h3 {
-            font-family: system-ui, sans-serif;
-            font-size: 18px;
-            line-height: 1.5;
-            margin: 0 0 6px;
-            font-weight: 500;
+        .publication-list li {
+            counter-increment: publication;
+            position: relative;
+            padding: 15px 0 15px 35px;
+            border-bottom: 1px solid var(--border);
+            font-size: 15px;
+            line-height: 1.75;
         }
 
-        .pub p {
-            font-size: 14px;
-            color: var(--muted);
-            margin: 0;
-        }
-
-        .year {
+        .publication-list li::before {
+            content: counter(publication) ".";
+            position: absolute;
+            left: 0;
+            top: 15px;
+            color: var(--accent);
+            font-family: Arial, sans-serif;
             font-size: 13px;
+            font-weight: bold;
+        }
+
+        .publication-list li:last-child {
+            border-bottom: none;
+        }
+
+        .publication-list strong {
+            color: var(--green);
+        }
+
+        .publication-list em {
+            color: var(--muted);
+        }
+
+        .status {
+            display: inline-block;
+            margin-left: 5px;
+            padding: 2px 7px;
+            background: var(--green-light);
+            color: var(--green);
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        /* Lists */
+
+        .simple-list {
+            padding-left: 22px;
+        }
+
+        .simple-list li {
+            padding: 8px 0;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .simple-list li::marker {
             color: var(--accent);
         }
 
         /* Teaching */
 
-        .teaching-grid {
+        .course-group {
+            margin-bottom: 28px;
+        }
+
+        .course-group h4 {
+            color: var(--green);
+            font-size: 17px;
+            font-weight: normal;
+            margin-bottom: 12px;
+        }
+
+        .course-list {
+            list-style: none;
+            counter-reset: course;
+        }
+
+        .course-list li {
+            counter-increment: course;
+            padding: 7px 0 7px 30px;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+
+        .course-list li::before {
+            content: counter(course) ".";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Awards and service */
+
+        .subsection {
+            margin-bottom: 38px;
+        }
+
+        .subsection h3 {
+            color: var(--green);
+            font-size: 20px;
+            font-weight: normal;
+            margin-bottom: 12px;
+        }
+
+        .reference-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 55px;
-            margin-top: 30px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
         }
 
-        ul {
-            padding-left: 20px;
+        .reference-card {
+            padding: 20px;
+            background: var(--green-light);
+        }
+
+        .reference-card h4 {
+            color: var(--green);
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .reference-card p {
             color: var(--muted);
-        }
-
-        li {
-            padding: 4px 0;
-        }
-
-        /* CV and background */
-
-        .cv-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .cv-details h3 {
-            font-size: 23px;
-        }
-
-        .cv-details p {
-            font-size: 15px;
-            color: var(--muted);
-        }
-
-        .cv-download {
-            margin: 30px 0;
-            padding: 26px;
-            background: #e9ede4;
-        }
-
-        .cv-download h3 {
-            margin-top: 0;
-        }
-
-        .cv-download p {
-            color: var(--muted);
-            font-size: 15px;
-        }
-
-        .cv-download .links {
-            margin-top: 18px;
+            font-size: 14px;
+            line-height: 1.7;
         }
 
         /* Footer */
 
         footer {
-            background: var(--ink);
-            color: var(--paper);
-            padding: 48px 0;
-        }
-
-        footer h2 {
-            font-size: 35px;
-        }
-
-        footer .links {
-            margin: 0;
-        }
-
-        footer .links a:hover {
-            color: #d7b8a6;
-        }
-
-        footer small {
-            display: block;
-            margin-top: 38px;
-            opacity: 0.65;
+            padding: 30px 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--muted);
+            font-family: Arial, sans-serif;
             font-size: 12px;
         }
 
-        /* Mobile responsiveness */
+        /* Responsive */
 
-        @media (max-width: 760px) {
-            .nav {
+        @media (max-width: 800px) {
+            .navigation {
                 align-items: flex-start;
                 flex-direction: column;
-                gap: 10px;
             }
 
             nav {
-                gap: 18px;
-                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 10px 15px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr 210px;
+                gap: 30px;
+            }
+
+            .interest-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 35px 20px 65px;
             }
 
             .hero {
                 grid-template-columns: 1fr;
-                padding: 55px 0;
-                gap: 30px;
+                gap: 25px;
             }
 
-            .portrait {
-                aspect-ratio: 4 / 3;
-            }
-
-            .section-head,
-            .project {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-
-            .research,
-            .teaching-grid,
-            .cv-details {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-
-            section {
-                padding: 45px 0;
+            .profile-image-container {
+                width: 210px;
+                order: -1;
             }
 
             .hero h1 {
-                letter-spacing: -2px;
+                font-size: 39px;
             }
 
-            .pub {
-                grid-template-columns: 48px 1fr;
-                gap: 12px;
+            .interest-grid,
+            .reference-grid {
+                grid-template-columns: 1fr;
             }
 
-            .cv-download {
-                padding: 20px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
+            .entry {
+                grid-template-columns: 1fr;
+                gap: 5px;
             }
 
-            .button {
-                transition: none;
+            section {
+                margin-top: 55px;
+            }
+
+            .section-heading h2 {
+                font-size: 25px;
             }
         }
     </style>
@@ -436,511 +532,1469 @@
 
 <body>
 
-    <!-- Navigation -->
-    <header>
-        <div class="wrap">
-            <div class="nav">
+<header>
+    <div class="navigation">
+        <a href="#home" class="brand">Priyanka Kundu</a>
 
-                <a class="brand" href="#">Priyanka Kundu</a>
+        <nav>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="#presentations">Presentations</a>
+            <a href="#teaching">Teaching</a>
+            <a href="#awards">Awards</a>
+            <a href="#service">Service</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
 
-                <nav aria-label="Main navigation">
-                    <a href="#research">Research</a>
-                    <a href="#publications">Publications</a>
-                    <a href="#teaching">Teaching</a>
-                    <a href="#cv">CV & background</a>
-                </nav>
 
-            </div>
-        </div>
-    </header>
+<main>
 
-    <main class="wrap">
+    <!-- HOME / INTRODUCTION -->
 
-        <!-- Hero section -->
-        <div class="hero">
+    <section class="hero" id="home">
 
-            <div>
-                <div class="eyebrow">
-                    Communication · Media · Technology
-                </div>
+        <div>
+            <div class="eyebrow">Communication Scholar</div>
 
-                <h1>
-                    Who gets to<br>
-                    shape the story?
-                </h1>
+            <h1>Priyanka Kundu</h1>
 
-                <p class="intro">
-                    I’m Priyanka Kundu, a doctoral candidate in
-                    Communication at the University of Illinois Chicago.
-                </p>
-
-                <p class="body-copy">
-                    I study how media and emerging technologies
-                    redistribute communicative power—among political
-                    elites, media institutions, and ordinary users—across
-                    Global South and transnational contexts.
-                </p>
-
-                <div class="links">
-                    <a class="button primary" href="#research">
-                        Explore my research ↗
-                    </a>
-
-                    <a
-                        class="button"
-                        href="https://scholar.google.com/citations?user=sZ0dZLEAAAAJ"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Google Scholar ↗
-                    </a>
-                </div>
-            </div>
-
-            <!-- Profile photograph -->
-            <aside
-                class="portrait"
-                aria-label="Priyanka Kundu's profile photograph"
-            >
-
-                <img
-                    class="profile-image"
-                    src="images/profile.jpg"
-                    alt="Priyanka Kundu"
-                >
-
-            </aside>
-
-        </div>
-
-        <!-- Research -->
-        <section id="research">
-
-            <div class="section-head">
-
-                <div>
-                    <div class="eyebrow">01 / Research</div>
-
-                    <h2>
-                        Power in an evolving media environment.
-                    </h2>
-                </div>
-
-                <div class="body-copy">
-
-                    <p>
-                        My research connects digital political communication,
-                        journalism, platform affordances, and generative AI.
-                        I ask how stories become visible, whose perspectives
-                        they represent, and how technologies shape public life.
-                    </p>
-
-                    <p>
-                        I use qualitative, quantitative, computational, and
-                        mixed methods, with a particular emphasis on critical
-                        discourse analysis, interviews, and the study of
-                        platforms.
-                    </p>
-
-                </div>
-            </div>
-
-            <div class="research">
-
-                <article>
-                    <span class="number">I / POLITICAL ELITES</span>
-
-                    <h3>Platforms & political narratives</h3>
-
-                    <p>
-                        How political actors use platform features to
-                        construct narratives and exercise discursive power.
-                    </p>
-                </article>
-
-                <article>
-                    <span class="number">II / MEDIA & AI INSTITUTIONS</span>
-
-                    <h3>Technology & representation</h3>
-
-                    <p>
-                        How journalism and AI shape public understandings
-                        of technology, cultural representation, and
-                        accountability.
-                    </p>
-                </article>
-
-                <article>
-                    <span class="number">III / PARTICIPATING PUBLICS</span>
-
-                    <h3>Remix & public participation</h3>
-
-                    <p>
-                        How ordinary users appropriate and contest political
-                        meanings through participatory culture.
-                    </p>
-                </article>
-
-            </div>
-
-            <!-- Dissertation project -->
-            <div class="project">
-
-                <div>
-                    <div class="eyebrow">Dissertation</div>
-
-                    <h3>Platformed Election Campaigning</h3>
-                </div>
-
-                <div>
-                    <p>
-                        My dissertation examines Facebook affordances and
-                        political narratives in Bangladesh’s 2024 election.
-                        It compares official party pages to understand how
-                        platform features and political context shape
-                        campaign storytelling.
-                    </p>
-
-                    <p class="project-methods">
-                        Walkthrough method · Post coding ·
-                        Critical discourse analysis
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- AI research project -->
-            <div class="project">
-
-                <div>
-                    <div class="eyebrow">AI research</div>
-
-                    <h3>What is Radical?</h3>
-                </div>
-
-                <div>
-                    <p>
-                        Developed during my 2026 DDC × TrygFonden Fellowship
-                        at the University of Southern Denmark, this project
-                        probes how generative AI defines a contested
-                        political concept through stories in Bangla and
-                        English.
-                    </p>
-
-                    <p class="project-methods">
-                        Generative AI · Framing ·
-                        Language & transnational comparison
-                    </p>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Publications -->
-        <section id="publications">
-
-            <div class="eyebrow">02 / Selected publications</div>
-
-            <h2>Journalism, AI & public life.</h2>
-
-            <div class="pub">
-
-                <span class="year">2026</span>
-
-                <div>
-                    <h3>
-                        Mass Media Refugee Discourse in Bangladesh
-                    </h3>
-
-                    <p>
-                        Iowa Communication Journal · Co-authored article
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="pub">
-
-                <span class="year">2024</span>
-
-                <div>
-                    <h3>
-                        Artificial intelligence (AI) and future newsrooms:
-                        A study on journalists of Bangladesh
-                    </h3>
-
-                    <p>
-                        Pacific Journalism Review · Co-authored article
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="pub">
-
-                <span class="year">2024</span>
-
-                <div>
-                    <h3>
-                        Persuasive strategies in top TikTok breast
-                        cancer videos
-                    </h3>
-
-                    <p>
-                        Discover Social Science and Health ·
-                        Co-authored article
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="pub">
-
-                <span class="year">2020</span>
-
-                <div>
-                    <h3>
-                        Online Harassment of Female Journalists in Bangladesh
-                    </h3>
-
-                    <p>
-                        Handbook chapter · First author
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="links">
-
-                <a
-                    href="https://scholar.google.com/citations?user=sZ0dZLEAAAAJ"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    View publication details on Google Scholar ↗
-                </a>
-
-            </div>
-
-        </section>
-
-        <!-- Teaching -->
-        <section id="teaching">
-
-            <div class="section-head">
-
-                <div>
-                    <div class="eyebrow">03 / Teaching</div>
-
-                    <h2>
-                        Connecting ideas<br>
-                        with practice.
-                    </h2>
-                </div>
-
-                <p class="body-copy">
-                    My teaching draws on my experience as a journalist
-                    and educator in Bangladesh and the United States.
-                    I support students through multimodal materials,
-                    small-group activities, and varied opportunities
-                    to participate.
-                </p>
-
-            </div>
-
-            <div class="teaching-grid">
-
-                <div>
-                    <h3>University of Illinois Chicago</h3>
-
-                    <ul>
-                        <li>
-                            Fundamentals of Human Communication —
-                            Instructor of Record
-                        </li>
-
-                        <li>
-                            Teaching assistant experience in research,
-                            interpersonal communication, media, and
-                            social media courses
-                        </li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3>Bangladesh University of Professionals</h3>
-
-                    <ul>
-                        <li>News Gathering and Writing</li>
-                        <li>Print & Electronic Media Editing</li>
-                        <li>Editorial & Feature Writing</li>
-                        <li>
-                            Internship supervision and student research
-                            mentoring
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- CV and academic background -->
-        <section id="cv">
-
-            <div class="eyebrow">04 / CV & background</div>
-
-            <h2>A transnational perspective.</h2>
-
-            <div class="cv-details">
-
-                <div>
-                    <h3>Education & experience</h3>
-
-                    <p>
-                        PhD candidate, Communication<br>
-                        University of Illinois Chicago
-                    </p>
-
-                    <p>
-                        BSS & MSS, Mass Communication & Journalism<br>
-                        University of Dhaka
-                    </p>
-
-                    <p>
-                        Former lecturer, Bangladesh University of
-                        Professionals<br>
-                        Former journalist in Bangladesh
-                    </p>
-                </div>
-
-                <div>
-                    <h3>Selected recognition & service</h3>
-
-                    <p>
-                        DDC × TrygFonden Fellowship · 2026<br>
-                        International Student Ambassador Award,
-                        UIC · 2026<br>
-                        Chicago Consular Corps Award · 2025<br>
-                        NCA Political Communication Division Top
-                        Student Paper · 2024
-                    </p>
-
-                    <p>
-                        President, Communication Graduate Students
-                        Research Club, UIC · 2026
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- CV download section -->
-            <div class="cv-download">
-
-                <h3>Curriculum Vitae</h3>
-
-                <p>
-                    View my academic CV for details about my education,
-                    research, publications, teaching experience, and
-                    professional activities.
-                </p>
-
-                <div class="links">
-
-                    <a
-                        class="button primary"
-                        href="files/Priyanka_Kundu_CV.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        View CV ↗
-                    </a>
-
-                    <a
-                        class="button"
-                        href="files/Priyanka_Kundu_CV.pdf"
-                        download="Priyanka_Kundu_CV.pdf"
-                    >
-                        Download CV ↓
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- Academic profiles -->
-            <div class="links">
-
-                <a
-                    class="button"
-                    href="https://orcid.org/0000-0001-8716-7038"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    ORCID ↗
-                </a>
-
-                <a
-                    class="button"
-                    href="https://scholar.google.com/citations?user=sZ0dZLEAAAAJ"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Scholar profile ↗
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer>
-
-        <div class="wrap">
-
-            <div
-                class="eyebrow"
-                style="color: #d7b8a6;"
-            >
-                Priyanka Kundu
-            </div>
-
-            <h2>Media. Technology. Public life.</h2>
-
-            <p>
-                Doctoral candidate in Communication<br>
+            <p class="hero-title">
+                Doctoral Candidate (ABD), Department of Communication<br>
                 University of Illinois Chicago
             </p>
 
-            <div class="links">
+            <p class="hero-description">
+                I am a doctoral candidate in the Department of Communication
+                at the University of Illinois Chicago (UIC). My research
+                examines the intersections of digital media, political
+                communication, platform power, and emerging technologies,
+                with particular attention to the Global South and
+                transnational contexts.
+            </p>
 
-                <a
-                    href="https://scholar.google.com/citations?user=sZ0dZLEAAAAJ"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Google Scholar ↗
+            <p class="hero-description">
+                My work investigates how digital platforms shape political
+                narratives, public discourse, and collective identities. I
+                am also interested in the social and political implications
+                of artificial intelligence, including the ways generative AI
+                systems influence information environments, representation,
+                and democratic communication.
+            </p>
+
+            <p class="hero-description">
+                My dissertation examines platformed election campaigning
+                through an analysis of Facebook affordances and political
+                narratives during Bangladesh's 2024 election.
+            </p>
+
+            <div class="contact-links">
+                <a href="mailto:pkundu3@uic.edu">Email</a>
+
+                <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener">
+                    LinkedIn
                 </a>
 
-                <a
-                    href="https://orcid.org/0000-0001-8716-7038"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    ORCID ↗
+                <a href="https://scholar.google.com/citations?user=sZ0dZLEAAAAJ"
+                   target="_blank" rel="noopener">
+                    Google Scholar
                 </a>
 
+                <a href="https://orcid.org/0000-0001-8716-7038"
+                   target="_blank" rel="noopener">
+                    ORCID
+                </a>
             </div>
 
-            <small>© 2026 Priyanka Kundu</small>
+            <div class="cv-buttons">
+                <a class="button"
+                   href="files/Priyanka_Kundu_CV.pdf"
+                   target="_blank" rel="noopener">
+                    View CV
+                </a>
+
+                <a class="button secondary"
+                   href="files/Priyanka_Kundu_CV.pdf"
+                   download>
+                    Download CV
+                </a>
+            </div>
+        </div>
+
+        <aside class="profile-image-container">
+            <img
+                class="profile-image"
+                src="images/profile.jpg"
+                alt="Priyanka Kundu"
+            >
+        </aside>
+
+    </section>
+
+
+    <!-- RESEARCH INTERESTS -->
+
+    <section id="research">
+
+        <div class="section-heading">
+            <h2>Research</h2>
+            <p>Research interests, ongoing projects, and scholarly work</p>
+        </div>
+
+        <div class="interest-grid">
+
+            <div class="interest-card">
+                <h3>Political Communication</h3>
+                <p>
+                    Political narratives, populism, affective politics,
+                    propaganda, election campaigning, and democratic
+                    communication.
+                </p>
+            </div>
+
+            <div class="interest-card">
+                <h3>Digital Platforms</h3>
+                <p>
+                    Platform affordances, algorithmic power, networked
+                    publics, social media cultures, and platform governance.
+                </p>
+            </div>
+
+            <div class="interest-card">
+                <h3>Artificial Intelligence</h3>
+                <p>
+                    Generative AI, automated journalism, AI and democracy,
+                    AI representation, and the social implications of
+                    emerging technologies.
+                </p>
+            </div>
+
+            <div class="interest-card">
+                <h3>Global South</h3>
+                <p>
+                    Transnational communication, postcolonial perspectives,
+                    media systems, and digital inequalities in South Asia
+                    and other Global South contexts.
+                </p>
+            </div>
+
+            <div class="interest-card">
+                <h3>Media and Public Discourse</h3>
+                <p>
+                    Media framing, information ecosystems, political
+                    discourse, collective identity, and public opinion.
+                </p>
+            </div>
+
+            <div class="interest-card">
+                <h3>Digital Culture and Affect</h3>
+                <p>
+                    Memes, TikTok cultures, affective publics, digital
+                    activism, popular culture, and political expression.
+                </p>
+            </div>
 
         </div>
 
-    </footer>
+        <div class="content-block" style="margin-top: 40px;">
+            <h3>Dissertation</h3>
+
+            <p>
+                <strong>
+                    Platformed Election Campaigning: Facebook Affordances
+                    and Political Narratives in Bangladesh's 2024 Election
+                </strong>
+            </p>
+
+            <p>
+                Advisor: Zizi Papacharissi, Ph.D.
+            </p>
+
+            <p>
+                Committee: Andrew Rojecki, Ph.D.; Sharon Meraz, Ph.D.;
+                Ishani Mukherjee, Ph.D.; and Samuel Woolley, Ph.D.
+                (External Member).
+            </p>
+
+            <p>
+                Expected graduation: May 2027.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- PUBLICATIONS -->
+
+    <section id="publications">
+
+        <div class="section-heading">
+            <h2>Publications</h2>
+            <p>Peer-reviewed journal articles, book chapters, and manuscripts</p>
+        </div>
+
+        <div class="content-block">
+
+            <h3>Peer-Reviewed Journal Articles</h3>
+
+            <ol class="publication-list">
+
+                <li>
+                    Kundu, P. &amp; Aman, H. S. (2026).
+                    <strong>
+                        Mass Media Refugee Discourse in Bangladesh:
+                        A Case of Rohingya in Post-US Funding Reduction.
+                    </strong>
+                    <em>Iowa Journal of Communication</em>, 58(1).
+                </li>
+
+                <li>
+                    Jamil, S., Alazrak, N., &amp; Kundu, P. (2025).
+                    <strong>
+                        Becoming Tech-savvy: Egyptian Journalists'
+                        Perceptions Towards the Acceptance of Automated
+                        Journalism.
+                    </strong>
+                    <em>Journalism Practice</em>, 1–24.
+                    <a href="https://doi.org/10.1080/17512786.2025.2581817"
+                       target="_blank" rel="noopener">DOI</a>.
+                </li>
+
+                <li>
+                    Mheidly, N., Kundu, P., &amp; Facey, M. (2024).
+                    <strong>
+                        Persuasive strategies in top TikTok breast cancer
+                        videos: A rhetorical analysis.
+                    </strong>
+                    <em>Discover Social Science and Health</em>, 4(81).
+                    <a href="https://doi.org/10.1007/s44155-024-00142-9"
+                       target="_blank" rel="noopener">DOI</a>.
+                </li>
+
+                <li>
+                    Partha, S. B., Tabassum, M., Goni, M. A., &amp;
+                    Kundu, P. (2024).
+                    <strong>
+                        Artificial intelligence (AI) and future newsrooms:
+                        A study on journalists of Bangladesh.
+                    </strong>
+                    <em>Pacific Journalism Review: Te Koakoa</em>,
+                    30(1–2), 96–110.
+                    <a href="https://doi.org/10.24135/pjr.v30i1and2.1235"
+                       target="_blank" rel="noopener">DOI</a>.
+                </li>
+
+            </ol>
+
+        </div>
+
+
+        <div class="content-block">
+
+            <h3>Peer-Reviewed Book Chapters</h3>
+
+            <ol class="publication-list">
+
+                <li>
+                    Mukherjee, I., Williams, M., &amp; Kundu, P. (2025).
+                    <strong>
+                        ChatGPT for Durga Puja Parikrama: AI, VR,
+                        representation, and religious aestheticization
+                        in the Global South.
+                    </strong>
+                    In T. Ruth (Ed.), <em>Religion and AI: Theoretical
+                    and Empirical Approaches</em>. Bloomsbury Publishing.
+                    <span class="status">Accepted</span>
+                    Publication date: February 4, 2027.
+                </li>
+
+                <li>
+                    Hasan, M., &amp; Kundu, P. (2022).
+                    <strong>
+                        Hip-Hop Music Activism: A New Phenomenon in
+                        Bangladeshi Popular Culture.
+                    </strong>
+                    In H. Khondker, O. Muurlink, &amp; A. Ali (Eds.),
+                    <em>Emergence of Bangladesh</em>. Palgrave Macmillan.
+                    <a href="https://doi.org/10.1007/978-981-16-5521-0_23"
+                       target="_blank" rel="noopener">DOI</a>.
+                </li>
+
+                <li>
+                    Hasan, M., &amp; Kundu, P. (2021).
+                    <strong>
+                        Conformers and rebels: Competing patterns among
+                        Bangladeshi rap musicians.
+                    </strong>
+                    In A. E. Ruud &amp; M. Hasan (Eds.),
+                    <em>Masks of Authoritarianism: Hegemony, Power and
+                    Public Lives in Bangladesh</em>. Palgrave Macmillan.
+                    <a href="https://doi.org/10.1007/978-981-16-4314-9_11"
+                       target="_blank" rel="noopener">DOI</a>.
+                </li>
+
+                <li>
+                    Habiba, U., Kundu, P., Rahman, M. G., &amp; Rahman, M.
+                    (2017).
+                    <strong>
+                        Freedom of Expression in Bangladesh in the Context
+                        of Bloggers' Killings.
+                    </strong>
+                    In E. Frey, M. Rahman, &amp; H. El Bour (Eds.),
+                    <em>Negotiating Journalism Core Values and Cultural
+                    Diversities</em>. Nordicom.
+                    <a href="https://www.nordicom.gu.se/en/node/38814"
+                       target="_blank" rel="noopener">Available online</a>.
+                </li>
+
+            </ol>
+
+        </div>
+
+
+        <div class="content-block">
+
+            <h3>Under Review and In-Progress Articles</h3>
+
+            <ol class="publication-list">
+
+                <li>
+                    Kundu, P., &amp; Kim, Donna.
+                    <strong>
+                        Remixing Publics: Politics, Affect, and Play in
+                        TikTok Political Soundtrack Videos.
+                    </strong>
+                    <em>International Journal of Communication</em>,
+                    "Good Vibes Only" Special Issue.
+                    <span class="status">Under Review</span>
+                </li>
+
+                <li>
+                    Kundu, P.
+                    <strong>
+                        Populist Communication as Authoritarian
+                        Legitimation: A Qualitative Examination of the
+                        Bangladesh Awami League's Pre-Election Facebook
+                        Campaign.
+                    </strong>
+                    <em>Social Media + Society</em>.
+                    <span class="status">Under Review</span>
+                </li>
+
+                <li>
+                    Kundu, P., Mukherjee, I., &amp; Aman, H. S.
+                    <strong>
+                        "Hit or Miss": Excitement and Anxiety About AI
+                        in the South Asian Popular Press.
+                    </strong>
+                    <em>AI &amp; Society</em>.
+                    <span class="status">Under Review</span>
+                </li>
+
+                <li>
+                    Jamil, S., Okela, A., Kundu, P., &amp; Arandas, M.
+                    <strong>
+                        Beyond the digital threshold: Exploring the
+                        Egyptian rural women's experiences of digital
+                        divide.
+                    </strong>
+                    <em>World of Media</em>.
+                    <span class="status">Under Review</span>
+                </li>
+
+                <li>
+                    Kundu, P., &amp; Knüpfer, C. (2026).
+                    <strong>
+                        What is Radical? Probing GenAI's Definitions
+                        of a Contested Political Concept in a
+                        Transnational Context.
+                    </strong>
+                    <span class="status">In Progress</span>
+                </li>
+
+                <li>
+                    Rojecki, A., Kundu, P., &amp; Alam, Z. (2026).
+                    <strong>
+                        When AI Fails: Technology Domains and Partisan
+                        Framing in U.S. News.
+                    </strong>
+                    <span class="status">In Progress</span>
+                </li>
+
+            </ol>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONFERENCE PRESENTATIONS -->
+
+    <section id="presentations">
+
+        <div class="section-heading">
+            <h2>Conference Presentations</h2>
+            <p>Selected competitively selected conference presentations</p>
+        </div>
+
+        <ol class="publication-list">
+
+            <li>
+                Rojecki, A., Kundu, P., &amp; Alam, Z. (2026).
+                <strong>
+                    When AI Fails: Technology Domains and Partisan
+                    Framing in U.S. News.
+                </strong>
+                American Political Science Association (APSA) Annual
+                Meeting &amp; Exhibition, Boston, September 3–6, 2026.
+            </li>
+
+            <li>
+                Kundu, P., &amp; Knüpfer, C. (2026).
+                <strong>
+                    What is Radical? Probing GenAI's Definitions of a
+                    Contested Political Concept in a Transnational Context.
+                </strong>
+                International Communication Association (ICA) 2026
+                Preconference on Global Disruptions: Platforms, Power,
+                and Contested Communication, Cape Town, South Africa.
+            </li>
+
+            <li>
+                Kundu, P. (2026).
+                <strong>
+                    Vibing with Mamdani: Everyday Social Justice through
+                    Joy, Pride, Swag, and Cringe by TikTok Affective Publics.
+                </strong>
+                2026 CDCS Symposium, "Good Vibes Only? How Affects and
+                Emotions Are Mediated for Justice in Digital Culture,"
+                Annenberg School for Communication, University of
+                Pennsylvania, Philadelphia.
+            </li>
+
+            <li>
+                Kundu, P., &amp; Mukherjee, I. (2025).
+                <strong>
+                    Dys-utopian Technologies: Cross-cultural News
+                    Framing of Artificial Intelligence.
+                </strong>
+                National Communication Association (NCA) Conference,
+                Denver, Colorado.
+            </li>
+
+            <li>
+                Kundu, P. (2025).
+                <strong>
+                    Mass Media Refugee Discourse in Bangladesh:
+                    A Case of Rohingya in Post-US Funding Reduction.
+                </strong>
+                National Communication Association (NCA) Conference,
+                Denver, Colorado.
+            </li>
+
+            <li>
+                Kundu, P. (2025).
+                <strong>
+                    Playful Networked Imitation Publics: A Case Study
+                    on Memes on TikTok.
+                </strong>
+                4S 2025 Conference: Reverberations, Seattle, Washington.
+            </li>
+
+            <li>
+                Kundu, P., &amp; Haq, F. (2025).
+                <strong>
+                    Political Agendas in Flux: A Comparative Study of
+                    Student Leaders' Digital Agenda-Setting Pattern
+                    Before and After Government Transition in Bangladesh.
+                </strong>
+                Midwest Political Science Association (MPSA) Conference,
+                Chicago.
+            </li>
+
+            <li>
+                Kundu, P. (2025).
+                <strong>
+                    Framing the "2024 Election" on Facebook: Narrative
+                    Building, Use of Propaganda Techniques, and Platform
+                    Affordances by Competing Political Parties in Bangladesh.
+                </strong>
+                International Communication Association (ICA) Political
+                Communication Division Pre-Conference, Denver.
+            </li>
+
+            <li>
+                Kundu, P. (2024).
+                <strong>
+                    Platform Affective Populism (PAP): A Study on
+                    Bangladeshi Political Parties' Use of Populism and
+                    Affective Politics in Pre-Election Facebook Campaign.
+                </strong>
+                NCA 110th Annual Convention, New Orleans.
+                <span class="status">Top Students' Paper Award</span>
+                Division of Political Communication.
+            </li>
+
+            <li>
+                Kundu, P., &amp; Meraz, S. (2024).
+                <strong>
+                    Propaganda by Other Means: Affective Politics on Facebook.
+                </strong>
+                American Political Science Association (APSA) Annual
+                Meeting &amp; Exhibition, Philadelphia.
+            </li>
+
+            <li>
+                Kundu, P. (2024).
+                <strong>
+                    Affective Populism in Social Networking Platforms:
+                    An Analysis on Bangladesh.
+                </strong>
+                American Institute of Bangladesh Studies (AIBS)
+                Conference, University of Texas at Austin.
+            </li>
+
+            <li>
+                Aman, H. S., &amp; Kundu, P. (2022).
+                <strong>
+                    Facebook Memes as Criticism: A Semiotic Analysis of
+                    Education Related Memes Posted by University
+                    Students in Bangladesh.
+                </strong>
+                International Association for Media and Communication
+                Research (IAMCR) Conference, Beijing (online).
+            </li>
+
+            <li>
+                Kundu, P., Tabassum, M., Haq, F., &amp; Partha, S. B. (2022).
+                <strong>
+                    Framing the Fragile: Identity Shift of Rohingya
+                    Refugees in Bangladeshi Media in 2017 and 2021.
+                </strong>
+                105th AEJMC Annual Conference, Detroit.
+            </li>
+
+        </ol>
+
+    </section>
+
+
+    <!-- INVITED TALKS -->
+
+    <section id="talks">
+
+        <div class="section-heading">
+            <h2>Invited Talks and Guest Lectures</h2>
+        </div>
+
+        <ol class="publication-list">
+
+            <li>
+                Kundu, P. (2026).
+                <strong>Political Language and AI.</strong>
+                AI and Democracy, University of Southern Denmark,
+                October 9, 2026.
+            </li>
+
+            <li>
+                Kundu, P. (2025).
+                <strong>Critical AI-Use and Implications in Digital Advocacy.</strong>
+                COMM 425: Digital Advocacy, Department of Communication,
+                University of Illinois Chicago.
+            </li>
+
+            <li>
+                Kundu, P. (2025).
+                <strong>
+                    Semiotic Analysis, Colonial Gaze, and Cinematic Neorealism.
+                </strong>
+                HONS 201: Exploring Culture, Identity, and Migration in
+                Global Media, Honors College, University of Illinois Chicago.
+            </li>
+
+            <li>
+                Kundu, P. (2025).
+                <strong>Intercultural Communication and Language.</strong>
+                COM 202: Intercultural Communication,
+                Stony Brook University.
+            </li>
+
+            <li>
+                Kundu, P. (2025).
+                <strong>Platform Governance, AI and Globalization.</strong>
+                OSUN 212: Globalization, Media &amp; Culture,
+                Bard College, New York.
+            </li>
+
+        </ol>
+
+    </section>
+
+
+    <!-- PUBLIC SCHOLARSHIP -->
+
+    <section id="public-scholarship">
+
+        <div class="section-heading">
+            <h2>Public Scholarship</h2>
+            <p>Selected public-facing writing and commentary</p>
+        </div>
+
+        <ol class="publication-list">
+
+            <li>
+                <strong>
+                    Profit over people: How Facebook fuels 'mob violence'
+                    in post-uprising Bangladesh.
+                </strong>
+                <em>The Business Standard</em>, August 29, 2025.
+                <a href="https://www.tbsnews.net/features/panorama/profit-over-people-how-facebook-fuels-mob-violence-post-uprising-bangladesh"
+                   target="_blank" rel="noopener">Read article</a>.
+            </li>
+
+            <li>
+                <strong>Steps for a safer information landscape.</strong>
+                <em>New Age</em>, December 31, 2023.
+                <a href="https://www.newagebd.net/article/221580/steps-for-a-safer-information-landscape"
+                   target="_blank" rel="noopener">Read article</a>.
+            </li>
+
+            <li>
+                <strong>Is Football Too Political?</strong>
+                <em>The Daily Star</em>, December 17, 2022.
+                <a href="https://www.thedailystar.net/sports/sports-special/fifa-world-cup-2022/news/football-too-political-3198471"
+                   target="_blank" rel="noopener">Read article</a>.
+            </li>
+
+        </ol>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <div class="section-heading">
+            <h2>Education</h2>
+        </div>
+
+        <div class="entry">
+            <div class="entry-date">2022–2027</div>
+
+            <div class="entry-content">
+                <h4>Ph.D. in Communication</h4>
+                <p>University of Illinois Chicago, Chicago, Illinois.</p>
+                <p>Department of Communication.</p>
+                <p>
+                    Dissertation: <em>Platformed Election Campaigning:
+                    Facebook Affordances and Political Narratives in
+                    Bangladesh's 2024 Election.</em>
+                </p>
+                <p>Advisor: Zizi Papacharissi, Ph.D.</p>
+                <p>Expected graduation: May 2027.</p>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-date">2017</div>
+
+            <div class="entry-content">
+                <h4>Master of Social Science (M.S.S.)</h4>
+                <p>
+                    Mass Communication and Journalism,
+                    University of Dhaka, Dhaka, Bangladesh.
+                </p>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-date">2016</div>
+
+            <div class="entry-content">
+                <h4>Bachelor of Social Science (B.S.S.)</h4>
+                <p>
+                    Mass Communication and Journalism,
+                    University of Dhaka, Dhaka, Bangladesh.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- FELLOWSHIPS -->
+
+    <section id="fellowships">
+
+        <div class="section-heading">
+            <h2>Fellowships</h2>
+        </div>
+
+        <div class="entry">
+            <div class="entry-date">January–December 2026</div>
+
+            <div class="entry-content">
+                <h4>SDU Digital Democracy Centre / TrygFonden Fellow 2026</h4>
+                <p>
+                    Digital Democracy Centre, University of Southern Denmark,
+                    Odense, Denmark.
+                </p>
+                <p>Mentor: Curd Benjamin Knüpfer, Ph.D.</p>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-date">2020–2021</div>
+
+            <div class="entry-content">
+                <h4>International Training Programme (ITP)</h4>
+                <p>
+                    Supported by the Swedish International Development
+                    Cooperation Agency (SIDA), Sweden.
+                </p>
+                <p>
+                    International Training in Media Development in a
+                    Democratic Framework.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- EMPLOYMENT -->
+
+    <section id="employment">
+
+        <div class="section-heading">
+            <h2>Employment History</h2>
+        </div>
+
+        <div class="entry">
+            <div class="entry-date">August 2023–Present</div>
+            <div class="entry-content">
+                <h4>Instructor of Record</h4>
+                <p>University of Illinois Chicago, Chicago, Illinois.</p>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-date">June–August 2026</div>
+            <div class="entry-content">
+                <h4>Teaching Assistant</h4>
+                <p>
+                    Center for Talent Development, School of Education
+                    and Social Policy, Northwestern University,
+                    Evanston, Illinois.
+                </p>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-date">May–August 2025</div>
+            <div class="entry-content">
+                <h4>Graduate Summer Intern</h4>
+                <p>
+                    Office of Global Engagement, University of Illinois
+                    Chicago, Chicago, Illinois.
+                </p>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-date">August 2022–August 2023</div>
+            <div class="entry-content">
+                <h4>Graduate Teaching Assistant</h4>
+                <p>University of Illinois Chicago, Chicago, Illinois.</p>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-date">October 2018–August 2022</div>
+            <div class="entry-content">
+                <h4>Lecturer, Department of Mass Communication and Journalism</h4>
+                <p>
+                    Bangladesh University of Professionals (BUP),
+                    Mirpur, Dhaka.
+                </p>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-date">February–August 2018</div>
+            <div class="entry-content">
+                <h4>Adjunct Faculty, Department of Journalism, Communication and Media Studies</h4>
+                <p>State University of Bangladesh, Dhaka.</p>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-date">January–October 2018</div>
+            <div class="entry-content">
+                <h4>Staff Reporter</h4>
+                <p>United News of Bangladesh (UNB), Dhaka.</p>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-date">January 2016–December 2017</div>
+            <div class="entry-content">
+                <h4>Feature Contributor</h4>
+                <p>Daily Prothom Alo, Dhaka.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- TEACHING -->
+
+    <section id="teaching">
+
+        <div class="section-heading">
+            <h2>Teaching Experience</h2>
+            <p>Courses taught at UIC and other institutions</p>
+        </div>
+
+        <div class="course-group">
+            <h4>University of Illinois Chicago (UIC), Chicago, Illinois</h4>
+
+            <ol class="course-list">
+                <li>
+                    COMM 100: Human Communication
+                    <span class="status">
+                        Fall 2023, Spring 2024, Fall 2024, Spring 2025,
+                        Fall 2025, Spring 2026
+                    </span>
+                </li>
+                <li>COMM 140: Fundamentals of Social Media and Communication — Fall 2026</li>
+                <li>COMM 301: Communication Research — Summer 2026</li>
+                <li>COMM 102: Introduction to Interpersonal Communication — Summer 2025, Summer 2024</li>
+                <li>COMM 101: Introduction to Communication — Spring 2023</li>
+                <li>COMM 103: Introduction to Media — Fall 2022</li>
+            </ol>
+        </div>
+
+        <div class="course-group">
+            <h4>
+                Bangladesh University of Professionals (BUP),
+                Mirpur, Dhaka (2018–2022)
+            </h4>
+
+            <ol class="course-list">
+                <li>MCJ 1101: Concepts of Communication</li>
+                <li>MCJ 1208: News Gathering and Writing</li>
+                <li>MCJ 2312: Editing: Print and Electronic Media</li>
+                <li>MCJ 2420: Economic Process and Institutions</li>
+                <li>MCJ 3523: Script Writing for Radio, Television and Film</li>
+                <li>MCJ 3522: Media, Culture and Society</li>
+                <li>MCJ 3524: Newspaper Editing and Makeup</li>
+                <li>MCJ 3627: Advertising</li>
+                <li>MCJ 4838: Editorial and Feature Writing</li>
+                <li>MCJ 4732: Development and Strategic Communication</li>
+            </ol>
+        </div>
+
+        <div class="course-group">
+            <h4>State University of Bangladesh, Dhaka (2018)</h4>
+
+            <ol class="course-list">
+                <li>JCMS 104: English Writing Skill</li>
+                <li>JCMS 103: News Gathering and Writing</li>
+            </ol>
+        </div>
+
+    </section>
+
+
+    <!-- CERTIFICATIONS -->
+
+    <section id="certifications">
+
+        <div class="section-heading">
+            <h2>Certifications and Professional Development</h2>
+        </div>
+
+        <div class="subsection">
+            <h3>Certifications</h3>
+
+            <ul class="simple-list">
+                <li>
+                    2025 — Inclusive Education Scholars Certificate Program,
+                    Center for the Advancement in Teaching Excellence (CATE),
+                    University of Illinois Chicago.
+                </li>
+                <li>
+                    2025 — Certificate in the Foundations of College
+                    Instruction, CATE, University of Illinois Chicago.
+                </li>
+                <li>
+                    2018 — Teaching Development Training Certificate,
+                    Bangladesh University of Professionals.
+                </li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h3>Short Courses</h3>
+
+            <ul class="simple-list">
+                <li>
+                    2025 — Developing Students' AI Literacies,
+                    Center for the Advancement in Teaching Excellence (CATE),
+                    University of Illinois Chicago.
+                </li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h3>Workshops</h3>
+
+            <ul class="simple-list">
+                <li>
+                    August 20, 2025 — Creating an Inclusive Syllabus,
+                    CATE, University of Illinois Chicago.
+                </li>
+                <li>
+                    August 20, 2025 — AI Planning: Proactive Approaches
+                    to Navigating AI Use in Your Courses, CATE,
+                    University of Illinois Chicago.
+                </li>
+                <li>
+                    August 28, 2025 — Rubrics Revealed: A Multipurpose
+                    Tool for Enhancing Feedback Clarity and Grading
+                    Consistency, CATE, University of Illinois Chicago.
+                </li>
+                <li>
+                    September 10, 2025 — Active Reading: Increasing
+                    Student Engagement with Social Annotation Tools,
+                    CATE, University of Illinois Chicago.
+                </li>
+                <li>
+                    September 11, 2025 — Writing an Effective Teaching
+                    Statement: For Faculty &amp; Instructors, CATE,
+                    University of Illinois Chicago.
+                </li>
+                <li>
+                    September 17, 2025 — Hot Moments: Preventing and
+                    Navigating Difficult Discussions, CATE,
+                    University of Illinois Chicago.
+                </li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h3>Professional Training</h3>
+
+            <ol class="publication-list">
+                <li>
+                    2026 — 15th Annual Doctoral Consortium of the
+                    International Communication Association Conference,
+                    Communication and Technology Division,
+                    Cape Town, South Africa.
+                </li>
+                <li>
+                    2025 — Connecting Scholars: Research Mentorship and
+                    Publishing Pathways for Early Career Scholars
+                    Investigating Emerging Technologies, Communication,
+                    and Equity. Workshop series funded by an NCA
+                    Advancing the Discipline Grant.
+                </li>
+                <li>
+                    2025 — National Communication Association Doctoral
+                    Honors Seminar, University of Tennessee, Knoxville.
+                </li>
+                <li>
+                    2024 — 14th Midwest Winter Workshop,
+                    University of Wisconsin–Madison.
+                </li>
+                <li>2021 — Train the e-Trainers Certificate, DW Academia.</li>
+                <li>
+                    2018 — Teachers' Development Training Certificate,
+                    Bangladesh University of Professionals.
+                </li>
+                <li>
+                    2018 — Gender Sensitive Reporting Certificate,
+                    Fojo Media Institute, Sweden, and Management
+                    Resources Initiatives, Bangladesh.
+                </li>
+                <li>
+                    2018 — Conflict Sensitive Journalism Training
+                    Certificate, BNNRC and Internews, Dhaka.
+                </li>
+                <li>
+                    2018 — Fact-Checking and Verification Training
+                    Certificate, BNNRC and Internews, Dhaka.
+                </li>
+                <li>
+                    2018 — News Reporting on Scientific Research
+                    Certificate, icddr,b, Dhaka.
+                </li>
+            </ol>
+        </div>
+
+    </section>
+
+
+    <!-- AWARDS -->
+
+    <section id="awards">
+
+        <div class="section-heading">
+            <h2>Grants, Awards and Recognition</h2>
+        </div>
+
+        <div class="subsection">
+            <h3>Grants</h3>
+
+            <ul class="simple-list">
+                <li>
+                    2025 — ICA Political Communication Division Travel Grant
+                    ($400).
+                </li>
+                <li>
+                    2024 — Students Caucus Travel Grant, National
+                    Communication Association ($200).
+                </li>
+                <li>
+                    2024 and 2022 — American Institute of Bangladesh
+                    Studies Conference Travel Grants ($500).
+                </li>
+                <li>
+                    2021 (two grants) and 2020 — Bangladesh University
+                    Grants Commission and Bangladesh University of
+                    Professionals Research Grants ($1,500, $1,500,
+                    and $2,000).
+                </li>
+                <li>
+                    2015 — Shared Horizon Project Research Assistantship
+                    Grant, Finance Ministry of Norway and University
+                    of Oslo ($1,000).
+                </li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h3>Awards</h3>
+
+            <ul class="simple-list">
+                <li>
+                    2026 — International Student Ambassador Service Award
+                    (ISASA), University of Illinois Chicago ($500).
+                </li>
+                <li>
+                    2025 — Provost's Graduate Internship Award (PGIA),
+                    University of Illinois Chicago ($5,000).
+                </li>
+                <li>
+                    2025 — Chicago Consular Corps Award,
+                    University of Illinois Chicago ($1,000).
+                </li>
+                <li>
+                    2025 — Inaugural Barnhurst-Doherty Award,
+                    University of Illinois Chicago ($750).
+                </li>
+                <li>
+                    2024, 2025, and 2026 — UIC Graduate Student Council
+                    Travel Awards ($350, $500, and $550).
+                </li>
+                <li>
+                    2024 and 2025 — UIC Graduate College Student
+                    Presenter Awards ($150).
+                </li>
+                <li>
+                    2024 — Top Students' Paper Award, Division of
+                    Political Communication, NCA 110th Annual Convention.
+                </li>
+                <li>
+                    2019 — Best Paper Award, 3rd National Conclave:
+                    Communication 4.0, Institute of Media Studies,
+                    Bhubaneswar, India.
+                </li>
+                <li>
+                    2019 — Global Investigative Journalism Network
+                    Conference Travel Award, Hamburg, Germany ($1,000).
+                </li>
+                <li>
+                    2019 — 1st Global International Conference Travel
+                    Award, Nepal ($500).
+                </li>
+                <li>
+                    2019 — 3rd National Conclave: Communication 4.0
+                    Travel Award, India ($500).
+                </li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h3>Honors and Recognitions</h3>
+
+            <ul class="simple-list">
+                <li>
+                    2024 — Semi-Finalist, 3M Thesis Competition,
+                    University of Illinois Chicago.
+                </li>
+                <li>
+                    2017 — Ruqayyah Memorial Merit Scholarship,
+                    University of Dhaka.
+                </li>
+                <li>
+                    2016 — Professor Sitara Parvin Memorial Scholarship,
+                    University of Dhaka.
+                </li>
+                <li>
+                    2016 — Education Board General Scholarship.
+                </li>
+            </ul>
+        </div>
+
+    </section>
+
+
+    <!-- SERVICE -->
+
+    <section id="service">
+
+        <div class="section-heading">
+            <h2>Academic Service and Leadership</h2>
+        </div>
+
+        <div class="subsection">
+            <h3>University Service</h3>
+
+            <ul class="simple-list">
+                <li>
+                    2025–2026 — Department of Communication Representative,
+                    Graduate Students' Council, University of Illinois Chicago.
+                </li>
+                <li>
+                    2024–2025 — Coordinator, South Asia Reading Group,
+                    Institute for the Humanities, University of Illinois Chicago.
+                </li>
+                <li>
+                    2021 — Graduate Advisor, Master's Batch 2021,
+                    Department of Mass Communication and Journalism,
+                    Bangladesh University of Professionals.
+                </li>
+                <li>
+                    2020 — Member Secretary and Drafting Coordinator,
+                    MSS Curriculum Development Committee, Department
+                    of Mass Communication and Journalism,
+                    Bangladesh University of Professionals.
+                </li>
+                <li>
+                    2019–2020 — Undergraduate Students Advisor,
+                    Department of Mass Communication and Journalism,
+                    Bangladesh University of Professionals.
+                </li>
+                <li>
+                    2019–2020 — Faculty Advisor, Bangladesh University
+                    of Professionals Photographic Society.
+                </li>
+                <li>
+                    2019–2021 — University Undergraduate Admission
+                    Committee, Bangladesh University of Professionals.
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="subsection">
+            <h3>Student Research Advisement and Mentorship</h3>
+
+            <ol class="publication-list">
+
+                <li>
+                    2021 — Hasib Shah Aman, Batch 2018, Department of
+                    Mass Communication and Journalism, Bangladesh
+                    University of Professionals.
+                    <strong>
+                        Social Media Meme as a Form of Criticism and
+                        Protest: A Critical Analysis from a Bangladeshi
+                        Perspective.
+                    </strong>
+                </li>
+
+                <li>
+                    2021 — Gazi Hanzala Galib, Batch 2018, Department of
+                    Mass Communication and Journalism, Bangladesh
+                    University of Professionals.
+                    <strong>
+                        Hate Speech against Religious Minorities in
+                        Bangladesh: An Analysis.
+                    </strong>
+                </li>
+
+                <li>
+                    2020 — Jahidul Islam Jobair, Batch 2017, Department
+                    of Mass Communication and Journalism, Bangladesh
+                    University of Professionals.
+                    <strong>
+                        Correlation between the Work Environment and
+                        the Job Satisfaction: A Study on Bangladeshi
+                        Photojournalists.
+                    </strong>
+                </li>
+
+                <li>
+                    2020 — Sahmiha Sultana Ruhi, Batch 2017, Department
+                    of Mass Communication and Journalism, Bangladesh
+                    University of Professionals.
+                    <strong>
+                        Communication Pattern in Drug-Rehabilitation
+                        Centers: An Analysis on Dhaka.
+                    </strong>
+                </li>
+
+                <li>
+                    2020–2021 — Internship Supervisor, Batch 2018.
+                    Supervised seven undergraduate students during
+                    their academic internships.
+                </li>
+
+            </ol>
+        </div>
+
+
+        <div class="subsection">
+            <h3>Peer Reviewer</h3>
+
+            <ul class="simple-list">
+                <li>
+                    International Communication Association (ICA)
+                    Conference — 2022, 2023, and 2024.
+                </li>
+                <li>
+                    National Communication Association (NCA)
+                    Conference — 2024, 2025, and 2026.
+                </li>
+                <li>
+                    International Association for Media and Communication
+                    Research (IAMCR) Conference — 2021, 2022, 2023,
+                    and 2024.
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="subsection">
+            <h3>Session Chair</h3>
+
+            <ol class="publication-list">
+                <li>
+                    2026 — "AI, Credibility, and Knowledge: Can AI Foster
+                    an Informed Citizenry?" APSA Annual Meeting and
+                    Exhibition, Boston.
+                </li>
+                <li>
+                    2025 — "Political Messaging in New Media,"
+                    Political Communication Division, NCA Conference,
+                    Denver.
+                </li>
+                <li>
+                    2025 — "Digital Space and Beyond: Migrant Labor,
+                    Misinformation, and Digital Feminism Across
+                    Asian/Pacific and American Spheres," Asian/Pacific
+                    American Communication Studies Division,
+                    NCA Conference, Denver.
+                </li>
+            </ol>
+        </div>
+
+
+        <div class="subsection">
+            <h3>Leadership and Volunteering</h3>
+
+            <ol class="publication-list">
+                <li>
+                    2025–2026 — Chair, Nominating Committee,
+                    Political Communication Division, National
+                    Communication Association.
+                </li>
+                <li>
+                    2026–Present — Founding President, Graduate
+                    Communication Group, Graduate Students' Research
+                    Club, Department of Communication,
+                    University of Illinois Chicago.
+                </li>
+                <li>
+                    2024–2025 — Cultural Secretary,
+                    Bangladesh Students' Association,
+                    University of Illinois Chicago.
+                </li>
+                <li>
+                    2023 — Member and Communication Leader,
+                    University of Illinois Chicago Graduate
+                    Employees Organization.
+                </li>
+                <li>
+                    2024 — First Friends Program,
+                    Office of International Students,
+                    University of Illinois Chicago.
+                </li>
+                <li>
+                    2024 — Mentoring International Students,
+                    Department of Communication,
+                    University of Illinois Chicago.
+                </li>
+            </ol>
+        </div>
+
+    </section>
+
+
+    <!-- SCHOLARLY MEMBERSHIPS -->
+
+    <section id="memberships">
+
+        <div class="section-heading">
+            <h2>Scholarly Affiliations and Memberships</h2>
+        </div>
+
+        <ul class="simple-list">
+            <li>
+                International Communication Association (ICA) —
+                Member, 2024–Present.
+            </li>
+            <li>
+                Society for Social Studies of Science (4S) —
+                Member, 2025.
+            </li>
+            <li>
+                Midwest Political Science Association (MPSA) —
+                Member, 2024.
+            </li>
+            <li>
+                American Political Science Association (APSA) —
+                Member, 2024 and 2026.
+            </li>
+            <li>
+                National Communication Association (NCA) —
+                Member, 2024–Present.
+            </li>
+        </ul>
+
+    </section>
+
+
+    <!-- REFERENCES -->
+
+    <section id="references">
+
+        <div class="section-heading">
+            <h2>References</h2>
+        </div>
+
+        <div class="reference-grid">
+
+            <div class="reference-card">
+                <h4>Zizi Papacharissi, Ph.D.</h4>
+                <p>
+                    Professor<br>
+                    Department of Communication<br>
+                    University of Illinois Chicago
+                </p>
+                <p>
+                    <a href="mailto:zizi@uic.edu">zizi@uic.edu</a>
+                </p>
+            </div>
+
+            <div class="reference-card">
+                <h4>Andrew Rojecki, Ph.D.</h4>
+                <p>
+                    Professor<br>
+                    Department of Communication<br>
+                    University of Illinois Chicago
+                </p>
+                <p>
+                    <a href="mailto:arojecki@uic.edu">
+                        arojecki@uic.edu
+                    </a>
+                </p>
+            </div>
+
+            <div class="reference-card">
+                <h4>Ishani Mukherjee, Ph.D.</h4>
+                <p>
+                    Clinical Assistant Professor<br>
+                    Department of Communication<br>
+                    University of Illinois Chicago
+                </p>
+                <p>
+                    <a href="mailto:imukhe2@uic.edu">
+                        imukhe2@uic.edu
+                    </a>
+                </p>
+            </div>
+
+            <div class="reference-card">
+                <h4>Curd Knüpfer, Ph.D.</h4>
+                <p>
+                    Associate Professor of Political Communication<br>
+                    University of Southern Denmark
+                </p>
+                <p>
+                    <a href="mailto:curd@sdu.dk">curd@sdu.dk</a>
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="section-heading">
+            <h2>Contact</h2>
+        </div>
+
+        <p>
+            Priyanka Kundu<br>
+            Doctoral Candidate (ABD)<br>
+            Department of Communication<br>
+            University of Illinois Chicago<br>
+            1007 W Harrison St<br>
+            Chicago, IL 60607
+        </p>
+
+        <p style="margin-top: 12px;">
+            Email:
+            <a href="mailto:pkundu3@uic.edu">pkundu3@uic.edu</a>
+        </p>
+
+        <div class="contact-links">
+            <a href="https://www.linkedin.com/in/priyanka-k-047700188/" target="_blank" rel="noopener">
+                LinkedIn
+            </a>
+
+            <a href="https://scholar.google.com/citations?user=sZ0dZLEAAAAJ&hl=en"
+               target="_blank" rel="noopener">
+                Google Scholar
+            </a>
+
+            <a href="https://orcid.org/0000-0001-8716-7038"
+               target="_blank" rel="noopener">
+                ORCID
+            </a>
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>
+        © 2026 Priyanka Kundu.
+        Academic website.
+    </p>
+</footer>
 
 </body>
-
 </html>
