@@ -1,13 +1,50 @@
+/*
+
 :root {
+
     --paper: #f7f6f0;
+
     --surface: #fffefa;
+
     --ink: #20382f;
+
     --muted: #66766d;
+
     --green: #496b59;
+
     --green-light: #e8eee7;
+
     --rust: #a45f45;
+
     --line: #dce2d9;
+
     --max: 1080px;
+
+}
+
+*/
+
+
+:root {
+
+    --paper: #f7f6f0;
+
+    --surface: #fffefa;
+
+    --ink: #5B1E2D;       /* Burgundy: main text */
+
+    --muted: #80616A;     /* Muted burgundy */
+
+    --green: #722F3E;     /* Maroon: links */
+
+    --green-light: #F1E6E8;
+
+    --rust: #8B2635;      /* Dark burgundy accent */
+
+    --line: #E3D5D9;
+
+    --max: 1080px;
+
 }
 
 * {
@@ -129,10 +166,18 @@ h3 {
     max-width: 760px;
     margin-bottom: 42px;
 }
-
+/*
 .lead {
     color: #465b50;
     font: 20px/1.55 Georgia, serif;
+}
+*/
+.lead {
+
+    color: var(--ink);
+
+    font: 20px/1.55 Georgia, serif;
+
 }
 
 .section {
