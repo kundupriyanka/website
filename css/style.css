@@ -269,4 +269,21 @@ h3 {
     .portrait {
         max-width: 260px;
     }
+
+    .award-photo {
+
+        max-width: 400px;
+
+        margin: 0 auto 35px;
+
+    }   
+
+    .award-photo img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+
+    }
+
 }
