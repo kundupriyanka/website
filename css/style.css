@@ -249,6 +249,28 @@ h3 {
     gap: 12px;
 }
 
+.award-photo {
+
+    max-width: 350px;
+
+    margin: 0 auto 35px;
+
+}
+
+.award-photo img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+    border-radius: 6px;
+
+}
+
 /* Mobile */
 
 @media (max-width: 760px) {
@@ -270,26 +292,6 @@ h3 {
         max-width: 260px;
     }
 
-    .award-photo {
 
-        max-width: 150px;
-
-        margin: 0 auto 35px;
-
-    }
-
-    .award-photo img {
-
-        width: 100%;
-
-        height: auto;
-
-        display: block;
-
-        object-fit: contain;
-
-        border-radius: 6px;
-
-    }
 
 }
